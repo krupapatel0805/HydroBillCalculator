@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Code for form  -->
+    <form class="form" name="form">
+        <h1>Monthly Electricity Bill Calculator</h1>
+        <label for="customer-name">Customer name: <span>&#42</span></label>
+        <input id="Name" class="validation" type="text">
+
+        <label for="customer-email">Customer email:<span>&#42</span></label>
+        <input id="Email" class="validation" type="email">
+
+        <label for="moring">Amount of electricity used in the morning:<span>&#42</span></label>
+        <input id="Morning-usage" class="validation" type="number" min="0">
+
+        <label for="afternoon">Amount of electricity used in the afternoon:</label>
+        <input id="Afternoon-usage" type="number" min="0">
+
+        <label for="evening">Amount of electricity used in the evening:</label>
+        <input id="Evening-usage" type="number" min="0">
+
+        <label for="province">Province:<span>&#42</span></label>
+        <select id="Province" class="validation">
+            <option value="" selected></option>
+            <option value="Alberta">Alberta</option>
+            <option value="Quebec">Quebec</option>
+            <option value="BritishColumbia">British Columbia</option>
+        </select>
+
+        <input type="checkbox" id="solar-energy">
+        <label for="solar-energy" id="solar-energy">My home uses solar energy</label>
+
+        <button id="submit">Calcuate total cost</button>
+    </form>
+
+    <!-- Code for Receipt  -->
+    <section>
+        <div class="receipt display">
+            <h1>Receipt</h1>
+            <p>Name:<span id="receipt-name"></span></p>
+            <p>Email:<span id="receipt-email"></span></p>
+            <hr>
+            <table>
+                <thead>
+                    <tr>
+                        <td>Data</td>
+                        <td>Rate</td>
+                        <td>Total</td>
+                    </tr>
+                </thead>
+                <tr>
+                    <td>Morning charges:</td>
+                    <td>$0.25</td>
+                    <td id="receipt-morning"></td>
+                </tr>
+                <tr>
+                    <td>Afternoon charges:</td>
+                    <td>$0.31</td>
+                    <td id="receipt-afternoon"></td>
+                </tr>
+                <tr>
+                    <td>Evening-Charges:</td>
+                    <td>$0.40</td>
+                    <td id="receipt-evening"></td>
+                </tr>
+                <tr>
+                    <td>Total Usage charges:</td>
+                    <td></td>
+                    <td id="receipt-totalUsage"></td>
+                </tr>
+                <tr>
+                    <td>Solar Energy Discount:</td>
+                    <td id="receipt-solarRate"></td>
+                    <td id="receipt-solarEnergy"></td>
+                </tr>
+                <tr>
+                    <td>Provincial Credit:</td>
+                    <td id="receipt-provincialRate"></td>
+                    <td id="receipt-provincialCredit"></td>
+                </tr>
+                <tr>
+                    <td>Subtotal:</td>
+                    <td></td>
+                    <td id="receipt-subtotal"></td>
+                </tr>
+                <tr>
+                    <td>Tax:</td>
+                    <td id="receipt-taxRate"></td>
+                    <td id="receipt-taxTotal"></td>
+                </tr>
+                <tr>
+                    <td>Final Total:</td>
+                    <td></td>
+                    <td id="receipt-finalTotal"></td>
+                </tr>
+            </table>
+            <h2>Do you want to calculate another bill?</h2>
+            <button id="receipt-button">Click Me!</button>
+        </div>
+    </section>
+    <script src="app.js"></script>
+
+</body>
+
+</html>
